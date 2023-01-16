@@ -8,9 +8,14 @@ html {
 }
 
 .body {
-max-width: 1000px;
-background-color: #f2f2f2;
+    max-width: 1000px;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+    padding: 20px;
+    word-break: break-word;
+}
+
+.heading {
 margin: 0 auto;
-padding: 20px;
-word-break: break-word;
+margin-bottom: 5px;
 }
