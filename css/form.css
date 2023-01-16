@@ -19,7 +19,11 @@ padding: 8px;
 color: white;
 border: rgb(151, 151, 151) solid 2px;
 border-radius: 3px;
-background-color:teal ;
+background-color:rgb(2, 128, 128) ;
+}
+
+.form__addButton:hover {
+    background-color: rgb(17, 161, 161);
 }
 
 @media (max-width: 767px) {
