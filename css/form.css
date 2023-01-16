@@ -1,0 +1,29 @@
+
+.form {
+    min-width: 150px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 10px;
+    padding: 15px;
+    border-bottom: #f2f2f2 solid 10px;
+    }
+    
+.form__input {
+  border: rgb(151, 151, 151) solid 2px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.form__addButton {
+padding: 8px;
+color: white;
+border: rgb(151, 151, 151) solid 2px;
+border-radius: 3px;
+background-color:teal ;
+}
+
+@media (max-width: 767px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+}

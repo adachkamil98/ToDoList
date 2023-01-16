@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 *, ::after, ::before {
@@ -7,8 +8,9 @@ html {
 }
 
 .body {
+max-width: 1000px;
 background-color: #f2f2f2;
-margin: auto;
+margin: 0 auto;
 padding: 20px;
 word-break: break-word;
 }
