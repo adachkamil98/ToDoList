@@ -12,6 +12,7 @@
 .list__item {
     display: grid;
     grid-template-columns: auto 1fr auto;
+    justify-content: space-between;
     grid-gap: 20px;
     padding: 20px;
     border-bottom: 1px solid #ddd;
@@ -28,6 +29,7 @@
     background-color: hsl(0, 100%, 34%);
     color: white;
     border: none;
+    border-radius: 2px;
     cursor: pointer;
 }
 
@@ -36,16 +38,25 @@
     outline: black solid 1px;
 }
 
+.list__clearButton:active {
+    background-color: hsl(0, 96%, 27%);
+}
+
 .list__button {
     height: 30px;
     width: 30px;
     background-color: hsl(102, 49%, 29%);
     color: white;
     border: none;
+    border-radius: 2px;
     cursor: pointer;
 }
 
 .list__button:hover {
     background-color: hsl(103, 34%, 42%);
     outline: black solid 1px;
+}
+
+.list__button:active {
+    background-color: hsl(103, 53%, 22%); 
 }

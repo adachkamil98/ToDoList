@@ -16,16 +16,26 @@ const welcome = () => {
         },
     ];
 
+    const addNewTask = (newTask) => {
+        tasks.unshift(
+            {
+                content: newTask,
+            }
+        );
+
+        render();
+    };
+
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
         render();
-    }
+    };
 
     const toggleTaskDone = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
 
         render();
-    }
+    };
 
     const bindEvents = () => {
 
@@ -44,7 +54,7 @@ const welcome = () => {
                 toggleTaskDone(index);
             });
         });
-    }
+    };
 
     const render = () => {
         let htmlString = "";
@@ -59,23 +69,13 @@ const welcome = () => {
             <button class="js-remove list__clearButton">🗑</button>
             </li>
         `;
-        }
+        };
 
         document.querySelector(".js-tasksList").innerHTML = htmlString;
 
         bindEvents();
 
     };
-
-    const addNewTask = (newTask) => {
-        tasks.unshift(
-            {
-                content: newTask,
-            }
-        );
-
-        render();
-    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -87,7 +87,9 @@ const welcome = () => {
         }
 
         addNewTask(newTask);
-    }
+        
+        document.querySelector(".js-newTaskContent").value = "";
+    };
 
     const init = () => {
         render();
