@@ -21,18 +21,13 @@ const welcome = () => {
         render();
     }
 
-    const render = () => {
-        let htmlString = "";
+    const toggleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
 
-        for (const task of tasks) {
-            htmlString += `
-            <li ${task.done ? "style=\"text-decoration: line-through\"" : ""}>
-            ${task.content}<button class="js-remove">Usuń zadanie</button>
-            </li>
-        `;
-        }
+        render();
+    }
 
-        document.querySelector(".js-tasksList").innerHTML = htmlString;
+    const bindEvents = () => {
 
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -41,6 +36,32 @@ const welcome = () => {
                 removeTask(index);
             });
         });
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            });
+        });
+    }
+
+    const render = () => {
+        let htmlString = "";
+
+        for (const task of tasks) {
+            htmlString += `
+            <li ${task.done ? "style=\"text-decoration: line-through\"" : ""}>
+            <button class="js-done"> ${task.done ? "✔" : "_"}</button>
+            ${task.content}
+            <button class="js-remove">🗑</button>
+            </li>
+        `;
+        }
+
+        document.querySelector(".js-tasksList").innerHTML = htmlString;
+
+        bindEvents();
 
     };
 
