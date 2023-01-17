@@ -65,9 +65,11 @@ const welcome = () => {
 
         for (const task of tasks) {
             htmlString += `
-            <li class="list__item">
-            <button class= "js-done list__button">${task.done ? "✔" : ""}</button>
-            <span class= "${task.done ? "list__taskDone" : ""}">
+            <li class="list list__item">
+            <button class= "js-done list__button">
+            ${task.done ? "✔" : ""}
+            </button>
+            <span class= "list ${task.done ? "list__taskDone" : "list"}">
             ${task.content}
             </span>
             <button class="js-remove list__clearButton">🗑️</button>
