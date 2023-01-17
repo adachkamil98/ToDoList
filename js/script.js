@@ -26,6 +26,10 @@ const welcome = () => {
         render();
     };
 
+    const clearInput = () => {
+        document.querySelector(".js-newTaskContent").value = "";
+    };
+
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
         render();
@@ -88,7 +92,7 @@ const welcome = () => {
 
         addNewTask(newTask);
 
-        document.querySelector(".js-newTaskContent").value = "";
+        clearInput();
     };
 
     const init = () => {
