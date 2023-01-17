@@ -26,6 +26,7 @@
 .list__clearButton {
     height: 30px;
     width: 30px;
+    padding: 0px;
     background-color: hsl(0, 100%, 34%);
     color: white;
     border: none;

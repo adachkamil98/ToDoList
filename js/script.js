@@ -66,7 +66,7 @@ const welcome = () => {
             <span class= "${task.done ? "list__item--done" : ""}">
             ${task.content}
             </span>
-            <button class="js-remove list__clearButton">🗑</button>
+            <button class="js-remove list__clearButton">🗑️</button>
             </li>
         `;
         };
