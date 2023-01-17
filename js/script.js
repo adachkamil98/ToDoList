@@ -63,7 +63,7 @@ const welcome = () => {
             htmlString += `
             <li class="list__item">
             <button class= "js-done list__button"> ${task.done ? "✔" : ""}</button>
-            <span class= "${task.done ? "list__item--done" : ""}">
+            <span class= "${task.done ? "list__taskDone" : ""}">
             ${task.content}
             </span>
             <button class="js-remove list__clearButton">🗑️</button>
@@ -87,7 +87,7 @@ const welcome = () => {
         }
 
         addNewTask(newTask);
-        
+
         document.querySelector(".js-newTaskContent").value = "";
     };
 
