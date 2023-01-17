@@ -19,7 +19,7 @@ const render = () => {
 
     for (const task of tasks) {
         htmlString += `
-            <li>
+            <li ${task.done ? "style=\"text-decoration: line-through\"" : ""}>
             ${task.content}
             </li>
         `;
@@ -28,8 +28,36 @@ const render = () => {
     document.querySelector(".js-tasksList").innerHTML = htmlString;
 };
 
+const addNewTask = (newTask) => {
+    tasks.unshift(
+        {
+           content: newTask,
+        }
+    );
+
+    render();
+}
+
+const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const newTask = document.querySelector(".js-newTaskContent").value.trim();
+    
+    if(newTask === "") {
+        return;
+    }
+
+    addNewTask(newTask);
+}
+
 const init = () => {
     render();
+
+    const form = document.querySelector(".js-form");
+
+    form.addEventListener("submit", onFormSubmit);
 };
 
 init();
+//const tasksList = document.querySelector(".js-tasksList")
+//tasksList.classList.toggle("section_list--done")
