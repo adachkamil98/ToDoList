@@ -7,11 +7,11 @@ const welcome = () => {
 
     const tasks = [
         {
-            content: "umyć naczynia",
+            content: "pouczyć się JS",
             done: false,
         },
         {
-            content: "odkurzyć",
+            content: "umyć zęby",
             done: true,
         },
     ];
@@ -51,10 +51,12 @@ const welcome = () => {
 
         for (const task of tasks) {
             htmlString += `
-            <li ${task.done ? "style=\"text-decoration: line-through\"" : ""}>
-            <button class="js-done"> ${task.done ? "✔" : "_"}</button>
+            <li class="list__item">
+            <button class= "js-done list__button"> ${task.done ? "✔" : ""}</button>
+            <span class= "${task.done ? "list__item--done" : ""}">
             ${task.content}
-            <button class="js-remove">🗑</button>
+            </span>
+            <button class="js-remove list__clearButton">🗑</button>
             </li>
         `;
         }
@@ -98,7 +100,3 @@ const welcome = () => {
     init();
 
 }
-
-
-//const tasksList = document.querySelector(".js-tasksList")
-//tasksList.classList.toggle("section_list--done")

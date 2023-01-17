@@ -1,0 +1,51 @@
+
+.list {
+    margin: 0 auto;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-gap: 10px;
+    padding: 15px;
+    list-style-type: none;
+}
+
+.list__item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.list__item--done {
+    text-decoration: line-through;
+}
+
+.list__clearButton {
+    height: 30px;
+    width: 30px;
+    background-color: hsl(0, 100%, 34%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.list__clearButton:hover {
+    background-color: hsl(0, 100%, 50%);
+    outline: black solid 1px;
+}
+
+.list__button {
+    height: 30px;
+    width: 30px;
+    background-color: hsl(102, 49%, 29%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.list__button:hover {
+    background-color: hsl(103, 34%, 42%);
+    outline: black solid 1px;
+}
