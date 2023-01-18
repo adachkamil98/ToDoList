@@ -6,7 +6,7 @@
 
 ### How to use it? Demo below ;)
 
-![gif](/videos/usageDemo.gif)
+![gif](/videos/usageDemo1.gif)
 
 ### Website
 
