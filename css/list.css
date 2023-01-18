@@ -1,16 +1,14 @@
 
 .list {
     background-color: white;
-    margin-top: 0px;
-    display: grid;
-    grid-gap: 10px;
+    margin: 0px;
     padding: 10px;
     list-style-type: none;
 }
 .list__item {
     display: grid;
+    padding: 10px;
     grid-template-columns: auto 1fr auto;
-    justify-self: space-between;
     border-bottom: 1px solid #ddd;
     align-self: center;
 }
@@ -20,40 +18,43 @@
 }
 
 .list__clearButton {
+    display: grid;
+    align-self: center;
     height: 30px;
     width: 30px;
-    padding: 0px;
-    background-color: hsl(0, 100%, 34%);
+    padding: 6px 5px 5px 4px;
+    background-color: hsl(0, 80%, 31%);
     color: white;
     border: none;
     border-radius: 2px;
-    cursor: pointer;
+    cursor:pointer;
 }
 
 .list__clearButton:hover {
-    background-color: hsl(0, 100%, 50%);
-    outline: black solid 1px;
+    background-color: hsl(0, 80%, 38%);
 }
 
 .list__clearButton:active {
-    background-color: hsl(0, 96%, 27%);
+    background-color: hsl(0, 80%, 43%);
 }
 
-.list__button {
+.list__toggleStatusButton {
+    display: grid;
+    align-self: center;
+    padding: 5px;
     height: 30px;
     width: 30px;
-    background-color: hsl(102, 49%, 29%);
+    background-color: hsl(103, 80%, 30%);
     color: white;
     border: none;
     border-radius: 2px;
     cursor: pointer;
 }
 
-.list__button:hover {
-    background-color: hsl(103, 34%, 42%);
-    outline: black solid 1px;
+.list__toggleStatusButton:hover {
+    background-color: hsl(103, 80%, 40%);
 }
 
-.list__button:active {
-    background-color: hsl(103, 53%, 22%);
+.list__toggleStatusButton:active {
+    background-color: hsl(103, 80%, 45%);
 }
