@@ -11,3 +11,10 @@
 ### Website
 
 https://adachkamil98.github.io/ToDoList/
+
+### Used
+
+- HTML
+- CSS
+- Java Script
+- BEM
