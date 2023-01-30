@@ -28,6 +28,7 @@
     border: none;
     border-radius: 2px;
     cursor:pointer;
+    transition: background-color 1000ms;
 }
 
 .list__clearButton:hover {
@@ -35,7 +36,7 @@
 }
 
 .list__clearButton:active {
-    background-color: hsl(0, 80%, 43%);
+    background-color: hsl(0, 80%, 47%);
 }
 
 .list__toggleStatusButton {
@@ -49,6 +50,7 @@
     border: none;
     border-radius: 2px;
     cursor: pointer;
+    transition: background-color 1000ms;
 }
 
 .list__toggleStatusButton:hover {

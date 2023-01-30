@@ -24,12 +24,15 @@
     border: none;
     padding: 10px;
     grid-gap: 0;
+    text-align: center;
+    transition: background-color 1000ms, transform 1000ms;
 }
 
 .form__addButton:hover {
-    background-color: hsl(180, 100%, 30%);
+    background-color: hsl(180, 100%, 32%);
+    transform: scale(1.05);
 }
 
 .form__addButton:active {
-    background-color: hsl(180, 100%, 35%);
+    background-color: hsl(180, 100%, 39%);
 }
