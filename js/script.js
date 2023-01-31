@@ -1,23 +1,21 @@
 {
 
-    const tasks = [
-        {
-            content: "pouczyć się JS",
-            done: false,
-        },
-        {
-            content: "umyć zęby",
-            done: true,
-        },
-    ];
+    let tasks = [];
+    let hideDoneTasks = false // kliknięcie w przycisk miałoby przełączać wartość tej zmiennej z false na true
 
     const addNewTask = (newTask) => {
+        tasks = [
+            ...tasks,
+            { content: newTask, done: false }
+        ];
+
+        /* stary kod
         tasks.unshift(
             {
                 content: newTask,
             }
         );
-
+*/
         render();
     };
 
@@ -26,17 +24,35 @@
     };
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1)
+        ];
+        /*stary kod
+       tasks.splice(taskIndex, 1);
+       */
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+      
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            {
+                ...tasks[taskIndex],
+                done: !tasks[taskIndex].done,
+            },
+            ...tasks.slice(taskIndex + 1)
+        ]
+
+        // niezgodne z immutability
+        //tasks[taskIndex].done = !tasks[taskIndex].done;
 
         render();
     };
 
-    const bindEvents = () => {
+    const bindRemoveEvents = () => {
 
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -45,6 +61,9 @@
                 removeTask(index);
             });
         });
+    };
+
+    const bindToggleTaskDone = () => {
 
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
@@ -55,27 +74,38 @@
         });
     };
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-            <li class="list list__item">
-                <button class= "js-done list__toggleStatusButton">
-                    ${task.done ? "✔" : ""}
-                </button>
-                <span class= "list ${task.done ? "list__taskDone" : "list"}">
-                    ${task.content}
-                </span>
-                <button class="js-remove list__clearButton">🗑️</button>
-            </li>
-        `;
+        <li class="list list__item">
+            <button class= "js-done list__toggleStatusButton">
+                ${task.done ? "✔" : ""}
+            </button>
+            <span class= "list ${task.done ? "list__taskDone" : "list"}">
+                ${task.content}
+            </span>
+            <button class="js-remove list__clearButton">🗑️</button>
+        </li>
+    `;
         };
 
         document.querySelector(".js-tasksList").innerHTML = htmlString;
+    };
 
-        bindEvents();
+    const renderButtons = () => { };
 
+    const bindButtonsEvents = () => { }; // przypiąc listener do przycisku ukończ zadania
+
+    const render = () => {
+
+        renderTasks();
+        renderButtons();
+
+        bindRemoveEvents();
+        bindToggleTaskDone();
+        bindButtonsEvents();// przypiąc listener do przycisku ukończ zadania
     };
 
     const onFormSubmit = (event) => {
