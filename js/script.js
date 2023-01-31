@@ -36,7 +36,7 @@
     };
 
     const toggleTaskDone = (taskIndex) => {
-      
+
         tasks = [
             ...tasks.slice(0, taskIndex),
             {
@@ -86,7 +86,9 @@
             <span class= "list ${task.done ? "list__taskDone" : "list"}">
                 ${task.content}
             </span>
-            <button class="js-remove list__clearButton">🗑️</button>
+            <button class="js-remove list__clearButton">
+            🗑️
+            </button>
         </li>
     `;
         };
@@ -94,9 +96,15 @@
         document.querySelector(".js-tasksList").innerHTML = htmlString;
     };
 
-    const renderButtons = () => { };
+    const renderButtons = () => {
 
-    const bindButtonsEvents = () => { }; // przypiąc listener do przycisku ukończ zadania
+
+    };
+
+    const bindButtonsEvents = () => {
+
+
+    }; // przypiąc listener do przycisku ukończ zadania
 
     const render = () => {
 

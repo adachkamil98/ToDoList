@@ -25,7 +25,7 @@
     padding: 10px;
     grid-gap: 0;
     text-align: center;
-    transition: background-color 1000ms, transform 1000ms;
+    transition: background-color 700ms, transform 700ms;
 }
 
 .form__addButton:hover {
