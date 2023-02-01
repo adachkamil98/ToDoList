@@ -26,6 +26,7 @@
     grid-gap: 0;
     text-align: center;
     transition: background-color 700ms, transform 500ms;
+    cursor: pointer;
 }
 
 .form__addButton:hover {
