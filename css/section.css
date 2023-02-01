@@ -1,6 +1,6 @@
 .section {
     background-color: white;
-    margin: 10px 0px;
+    border-bottom: #f2f2f2 solid 5px;
 }
 
 .section__header {
@@ -10,7 +10,7 @@
     align-items: center;
     padding: 10px;
     border-bottom: #f2f2f2 solid 2px;
-    grid-gap: 20px
+    margin: 0px;
 }
 
 @media(max-width: 767px) {
@@ -22,4 +22,5 @@
 .section__title {
     margin: 0;
     padding: 10px;
+    border-bottom: none;
 }
