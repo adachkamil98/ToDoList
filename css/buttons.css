@@ -7,7 +7,7 @@
     color: teal;
     background: transparent;
     border: none;
-    margin: 0 0 0 20px;
+    margin: 0 10px 0 20px;
     transition: color 800ms;
 }
 
@@ -21,4 +21,8 @@
 
 .buttons__button:hover {
     color: hsl(180, 100%, 35%);
+}
+
+.buttons__button:disabled {
+    color: #ccc
 }
